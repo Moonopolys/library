@@ -1,3 +1,25 @@
 from django.shortcuts import render
+from django.http import HttpResponse, HttpRequest
 
-# Create your views here.
+from .models import Genre, Book
+
+
+def home(request: HttpRequest):
+    books = Book.objects.all()
+    genres = Genre.objects.all()
+    context = {
+        'books': books,
+        'genres': genres,
+    }
+
+    return render(request, 'main/index.html', context)
+
+def books_by_genres(request: HttpRequest, genre_id: int):
+    books = Book.objects.filter()
+    genres = Genre.objects.filter()
+    context = {
+        'books': books,
+        'genres': genres,
+    }
+
+    return render(request, 'main/index.html', context)
