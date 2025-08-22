@@ -15,8 +15,8 @@ def home(request: HttpRequest):
     return render(request, 'main/index.html', context)
 
 def books_by_genres(request: HttpRequest, genre_id: int):
-    books = Book.objects.filter()
-    genres = Genre.objects.filter()
+    books = Book.objects.filter(genre_id=genre_id)
+    genres = Genre.objects.all()
     context = {
         'books': books,
         'genres': genres,
