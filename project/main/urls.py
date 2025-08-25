@@ -6,6 +6,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('', home, name='home'),
     path('genre/<int:genre_id>/', books_by_genres, name = 'by_genre'),
+    path('books/<int:pk>/', book_detail, name = 'detail'),
 ]
 
 if settings.DEBUG:

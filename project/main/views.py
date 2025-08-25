@@ -23,3 +23,11 @@ def books_by_genres(request: HttpRequest, genre_id: int):
     }
 
     return render(request, 'main/index.html', context)
+
+def book_detail(request: HttpRequest, pk: int):
+    bookses = Book.objects.get(pk=pk)
+    context = {
+        "bookses": bookses,
+    }
+
+    return render(request, "main/detail.html", context)
