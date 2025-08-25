@@ -31,3 +31,11 @@ def book_detail(request: HttpRequest, pk: int):
     }
 
     return render(request, "main/detail.html", context)
+
+def author_detail(request: HttpRequest, pk: int):
+    authors = Book.objects.get(pk=pk)
+    context = {
+        "authors": authors,
+    }
+
+    return render(request, "main/detail.html", context)

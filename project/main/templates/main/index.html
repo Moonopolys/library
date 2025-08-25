@@ -238,12 +238,10 @@
                 {% for book in books %}
                 <div class="col">
                     <div class="card h-100">
-
                         {% if book.image %}
                         <img src="{{ book.image.url }}" class="card-img-top" width="469" height="160" loading="lazy"
                              alt="{{ book.title }}">
                         {% endif %}
-
                         <div class="card-body">
                             <a href="{% url 'detail' book.pk %}">
                                 <h5 class="card-title">{{ book.title }}</h5>
@@ -251,8 +249,10 @@
                             <p class="card-text">
                                 {{ book.description|truncatewords:10 }}
                             </p>
+                            <a href="https://ru.wikipedia.org/wiki/">
+                                {{ book.author }}
+                            </a>
                         </div>
-
                         <div class="card-footer">
                             <small class="text-muted">{{ book.published_year }}</small>
                         </div>

@@ -7,6 +7,7 @@ urlpatterns = [
     path('', home, name='home'),
     path('genre/<int:genre_id>/', books_by_genres, name = 'by_genre'),
     path('books/<int:pk>/', book_detail, name = 'detail'),
+    path('author/<int:pk>/', author_detail, name = 'author')
 ]
 
 if settings.DEBUG:
